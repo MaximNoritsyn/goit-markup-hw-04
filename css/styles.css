@@ -13,7 +13,6 @@
   --color-modal-background: #fcfcfc;
 }
 
-
 /** 
 
 MAIN NORMALIZE
@@ -21,7 +20,6 @@ MAIN NORMALIZE
 COMMON CLASSES
 
 **/
-
 
 body {
   background-color: var(--color-white-background);
@@ -34,14 +32,25 @@ address {
 }
 
 img {
-	display: block;
+  display: block;
   max-width: 100%;
   height: auto;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
   margin: 0;
   padding-left: 0;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .visually-hidden {
@@ -57,10 +66,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
   overflow: hidden;
 }
 
-.container { 
+.container {
   max-width: 1158px;
-  padding: 0 15px; 
-  margin: 0 auto; 
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .list {
@@ -101,13 +110,11 @@ h1, h2, h3, h4, h5, h6, p, ul {
   color: var(--color-modal-background);
 }
 
-
 /** 
 
 HEADER
 
 **/
-
 
 .header {
   border-bottom: 1px solid var(--color-accent);
@@ -181,9 +188,13 @@ MAIN
 
 **/
 
-
 .hero {
   background-color: var(--color-hero-background);
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/hero-bg.jpeg);
   font-style: normal;
   text-align: center;
   padding: 188px 0px;
@@ -201,26 +212,26 @@ MAIN
 }
 
 .hero .hero-btn {
-    background-color: var(--color-primary-brand);
-    color: var(--color-white-background);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: 0.64px;
+  background-color: var(--color-primary-brand);
+  color: var(--color-white-background);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
 
-    display: block;
-    padding: 16px 32px;
-    min-width: 169px;
-    height: 56px;
-    border: none;
-    border-radius: 4px;
-    margin: 0 auto;
+  display: block;
+  padding: 16px 32px;
+  min-width: 169px;
+  height: 56px;
+  border: none;
+  border-radius: 4px;
+  margin: 0 auto;
 }
 
 .strategy {
-    font-style: normal;
+  font-style: normal;
 
-    padding: 120px 0px;
+  padding: 120px 0px;
 }
 
 .strategy .container .list {
@@ -235,22 +246,36 @@ MAIN
   width: calc((100% - 72px) / 4);
 }
 
-.strategy .strategy-name {
-    color: var(--color-dark);
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: 0.4px;
+.strategy .icon-container {
+  width: 264px;
+  height: 112px;
+  flex-shrink: 0;
+  margin-bottom: 8px;
 
-    margin-bottom: 8px;
+  border-radius: 4px;
+  background: var(--color-light);
+}
+
+.strategy .icon-container .icon {
+  margin: 24px 100px auto;
+}
+
+.strategy .strategy-name {
+  color: var(--color-dark);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.4px;
+
+  margin-bottom: 8px;
 }
 
 .strategy .strategy-text {
-    color: var(--slate, #434455);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0.32px;
+  color: var(--slate, #434455);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
 }
 
 .what-are-doing {
@@ -264,53 +289,98 @@ MAIN
 }
 
 .section-name {
-    color: var(--color-dark);
-    text-align: center;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.11;
-    letter-spacing: 0.02em;
-    text-transform: capitalize;
+  color: var(--color-dark);
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
 
-    margin-bottom: 72px;
+  margin-bottom: 72px;
 }
 
 .section-our-team {
-    background-color: var(--color-light);
+  background-color: var(--color-light);
 
-    padding: 120px 0px;
+  padding: 120px 0px;
 }
 
 .team-member {
-    text-align: center;
-    font-style: normal;
-    background-color: var(--color-white-background);
+  text-align: center;
+  font-style: normal;
+  background-color: var(--color-white-background);
 
-    border-radius: 0px 0px 4px 4px;
-    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .team-member .team-member-name {
-    color: var(--color-dark);
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: 0.4px;
+  color: var(--color-dark);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.4px;
 
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .team-member .team-member-job {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0.32px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+
+  margin-bottom: 8px;
 }
 
 .team-member-textblock {
   padding: 32px 0px;
 }
 
+.team-member .team-member-socials {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.team-member .team-member-socials .icon-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-primary-brand);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white-background);
+}
+
+.team-member .team-member-socials .icon-container .icon {
+  fill: currentColor;
+}
+
+.customers {
+  padding: 120px 0px;
+}
+
+.customers .container .list {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.customers .customer .link {
+  border: 1px sold var(--color-subtle-text);
+  color: var(--color-subtle-text);
+}
+
+.customers .container .link .icon {
+  fill: currentColor;
+}
+
+,
 
 /** 
 Portfolio
@@ -346,7 +416,8 @@ Portfolio
 .btn-filter.btn:focus {
   background-color: var(--color-pressed-state);
   color: var(--color-white-background);
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
+    0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
   border: 1px solid transparent;
 }
 
@@ -405,15 +476,11 @@ Portfolio
   letter-spacing: 0.32px;
 }
 
-
-
-
 /** 
 
 FOOTER
 
 **/
-
 
 .footer {
   background-color: var(--color-modal-overlay);
