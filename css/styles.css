@@ -11,6 +11,7 @@
   --color-hero-background: #2e2f42;
   --color-white-background: #ffffff;
   --color-modal-background: #fcfcfc;
+  --transition-settings: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /** 
@@ -84,6 +85,7 @@ ul {
 .link.address-link {
   padding: 24px 0px;
   display: inline-block;
+  transition: color var(--transition-settings);
 }
 
 .list .link:hover,
@@ -97,6 +99,8 @@ ul {
   font-family: inherit;
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
+  transition: background-color var(--transition-settings),
+    color var(--transition-settings);
 }
 
 .hero .btn:hover,
@@ -105,7 +109,6 @@ ul {
 .list .btn:focus,
 .btn:hover,
 .btn:focus {
-  cursor: pointer;
   background-color: var(--color-pressed-state);
   color: var(--color-modal-background);
 }
@@ -172,6 +175,9 @@ HEADER
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.32px;
+  position: relative;
+  top: 4px;
+  left: 0;
 }
 
 .address .address-link {
@@ -180,6 +186,21 @@ HEADER
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.32px;
+}
+
+.current {
+  color: var(--color-pressed-state);
+}
+
+.current::after {
+  position: relative;
+  top: 20px;
+  left: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-pressed-state);
 }
 
 /** 
@@ -195,6 +216,8 @@ MAIN
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/hero-bg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-style: normal;
   text-align: center;
   padding: 188px 0px;
@@ -346,6 +369,7 @@ MAIN
   gap: 24px;
 }
 
+.list-socials .icon-container,
 .team-member .team-member-socials .icon-container {
   width: 40px;
   height: 40px;
@@ -371,12 +395,12 @@ MAIN
   gap: 24px;
 }
 
-.customers .customer .link {
-  border: 1px sold var(--color-subtle-text);
+.customers .icon-thumb {
+  border: 1px solid var(--color-subtle-text);
   color: var(--color-subtle-text);
 }
 
-.customers .container .link .icon {
+.customers .container .icon-thumb .icon {
   fill: currentColor;
 }
 
@@ -410,6 +434,9 @@ Portfolio
   border-radius: 4px;
   border: 1px solid var(--color-accent);
   padding: 12px 24px;
+  transition: background-color var(--transition-settings),
+    color var(--transition-settings), box-shadow var(--transition-settings),
+    border var(--transition-settings);
 }
 
 .btn-filter.btn:hover,
@@ -485,6 +512,7 @@ FOOTER
 .footer {
   background-color: var(--color-modal-overlay);
   padding: 100px 0px;
+  color: var(--color-white-background);
 }
 
 .footer .logo {
@@ -502,4 +530,91 @@ FOOTER
   line-height: 1.5;
   letter-spacing: 0.32px;
   width: 264px;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: row;
+  gap: 120px;
+}
+
+.footer .social-media-title {
+  /* Body Medium */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  margin-bottom: 16px;
+}
+
+.footer .list-socials {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.footer .list-socials .icon-container .icon {
+  fill: currentColor;
+}
+
+/*
+
+Modal window
+
+*/
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  background: rgba(46, 47, 66, 0.4);
+  transition: visibility var(--transition-settings),
+    opacity var(--transition-settings);
+}
+
+.modal {
+  position: relative;
+  top: 80px;
+  left: calc(50% - 204px);
+  z-index: 1001;
+  width: 408px;
+  height: 584px;
+
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  flex-shrink: 0;
+  background-color: var(--color-modal-background);
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.icon-close-container {
+  position: relative;
+  top: 24px;
+  left: 360px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  fill: var(--color-accent);
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  border-width: 0px;
+}
+
+.icon-close-container .icon {
+  fill: var(--color-modal-overlay);
 }
