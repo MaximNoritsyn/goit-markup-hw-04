@@ -121,6 +121,9 @@ HEADER
 
 .header {
   border-bottom: 1px solid var(--color-accent);
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
 .header > .container {
@@ -192,15 +195,36 @@ HEADER
   color: var(--color-pressed-state);
 }
 
-.current::after {
-  position: relative;
-  top: 20px;
+.navbar-link::after {
+  opacity: 0;
+  position: absolute;
+  bottom: -1px;
   left: 0;
   content: '';
   display: block;
   width: 100%;
   height: 4px;
   background-color: var(--color-pressed-state);
+  opacity: 0;
+  transition: opacity var(--transition-settings);
+  border-radius: 2px;
+}
+
+.current::after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-pressed-state);
+  opacity: 1;
+  border-radius: 2px;
+}
+
+.navbar-link:hover::after {
+  opacity: 1;
 }
 
 /** 
@@ -217,10 +241,12 @@ MAIN
     ),
     url(../images/hero-bg.jpeg);
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   font-style: normal;
   text-align: center;
   padding: 188px 0px;
+  max-width: 1440px;
 }
 
 .hero .hero-name {
@@ -249,6 +275,7 @@ MAIN
   border: none;
   border-radius: 4px;
   margin: 0 auto;
+  transition: background-color var(--transition-settings);
 }
 
 .strategy {
@@ -270,6 +297,9 @@ MAIN
 }
 
 .strategy .icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 264px;
   height: 112px;
   flex-shrink: 0;
@@ -379,10 +409,22 @@ MAIN
   justify-content: center;
   align-items: center;
   color: var(--color-white-background);
+  transition: background-color var(--transition-settings);
+  cursor: pointer;
+}
+
+.list-socials .icon-container:hover,
+.list-socials .icon-container:focus {
+  background-color: var(--color-pressed-state);
 }
 
 .team-member .team-member-socials .icon-container .icon {
-  fill: currentColor;
+  fill: var(--color-light);
+}
+
+.customer {
+  width: calc((100% - 120px) / 6);
+  height: 88px;
 }
 
 .customers {
@@ -396,8 +438,20 @@ MAIN
 }
 
 .customers .icon-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid var(--color-subtle-text);
   color: var(--color-subtle-text);
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+}
+
+.customers .icon-thumb:hover,
+.customers .icon-thumb:focus {
+  border-color: var(--color-pressed-state);
+  color: var(--color-pressed-state);
 }
 
 .customers .container .icon-thumb .icon {
@@ -562,7 +616,12 @@ FOOTER
 .footer .container {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
   gap: 120px;
+}
+
+.footer .logo-container {
+  margin-top: 120px;
 }
 
 .footer .social-media-title {
@@ -571,8 +630,9 @@ FOOTER
   font-style: normal;
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: 0.32px;
+  letter-spacing: 0.02em;
   margin-bottom: 16px;
+  color: var(--color-white-background);
 }
 
 .footer .list-socials {
@@ -581,8 +641,13 @@ FOOTER
   gap: 16px;
 }
 
+.footer .icon-container:hover,
+.footer .icon-container:focus {
+  background-color: var(--color-success);
+}
+
 .footer .list-socials .icon-container .icon {
-  fill: currentColor;
+  fill: var(--color-light);
 }
 
 /*
