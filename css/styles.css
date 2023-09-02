@@ -179,8 +179,6 @@ HEADER
   line-height: 1.5;
   letter-spacing: 0.32px;
   position: relative;
-  top: 4px;
-  left: 0;
 }
 
 .address .address-link {
@@ -247,6 +245,7 @@ MAIN
   text-align: center;
   padding: 188px 0px;
   max-width: 1440px;
+  margin: 0 auto;
 }
 
 .hero .hero-name {
@@ -309,10 +308,6 @@ MAIN
   background: var(--color-light);
 }
 
-.strategy .icon-container .icon {
-  margin: 24px 100px auto;
-}
-
 .strategy .strategy-name {
   color: var(--color-dark);
   font-size: 20px;
@@ -333,6 +328,7 @@ MAIN
 
 .what-are-doing {
   padding: 120px 0px;
+  padding-top: 0px;
 }
 
 .container .list {
@@ -459,8 +455,6 @@ MAIN
 .customers .container .icon-thumb .icon {
   fill: currentColor;
 }
-
-,
 
 /** 
 Portfolio
@@ -626,7 +620,6 @@ FOOTER
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  gap: 120px;
 }
 
 .footer .logo-container {
