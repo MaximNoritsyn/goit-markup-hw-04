@@ -491,8 +491,9 @@ Portfolio
   border: 1px solid var(--color-accent);
   padding: 12px 24px;
   transition: color var(--transition-settings),
-    background-color var(--transition-settings) border-color
-      var(--transition-settings);
+    background-color var(--transition-settings),
+    border-color var(--transition-settings),
+    box-shadow var(--transition-settings);
 }
 
 .btn-filter.btn:hover,
@@ -725,14 +726,14 @@ Modal window
   cursor: pointer;
   transition: background-color var(--transition-settings),
     border var(--transition-settings);
-  fill: var(--color-modal-overlay);
+  color: var(--color-modal-overlay);
 }
 
 .icon-close-container:hover,
 .icon-close-container:focus {
   background-color: var(--color-pressed-state);
   border: 1px solid var(--color-pressed-state);
-  fill: var(--color-white-background);
+  color: var(--color-white-background);
   border: none;
 }
 
